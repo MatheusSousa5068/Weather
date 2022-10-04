@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,9 +8,18 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    
 
+<body>
+    <label for="city">Insira a cidade que deseja ver o clima atual: </label>
+    <input type="text" id="cidade">
+    <button onclick="getWeather()">Ver clima</button>
+
+    <p id="clima">
+
+    </p>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
     <script src="script.js"></script>
 </body>
+
 </html>

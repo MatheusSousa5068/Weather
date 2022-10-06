@@ -1,25 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width , initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;700&family=Quicksand:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/css/style.css">
+    <title>WeatherMe</title>
 </head>
-
 <body>
-    <label for="city">Insira a cidade que deseja ver o clima atual: </label>
-    <input type="text" id="cidade">
-    <button onclick="getWeather()">Ver clima</button>
+    <header>
+        <div id="title">
+            <img id="logo" src=img/cloud-solid.svg>
+            <h1> 
+                WEATHERME
+            </h1>
+        </div>
+    </header>
 
-    <p id="clima">
+    <main>
+        <div id="search-section">
+            <form>
+                <input type="text" id="search" name="search" placeholder="Search">
+                <button id="search-btn" onclick="getWeather()">&#xf002;</button>
+            </form>
+        </div>
 
-    </p>
+        <div id="main-section">
+            <div id="main-info">
+                <div id="city">
+                    LONDON
+                </div>
+                <div id="temperature">
+                    14º
+                </div>
+            </div>
+            <div id="sec-info">
+                <div id="local">
+                    <i class="fa-solid fa-location-dot"></i>Greater London, UK
+                </div>
+                <div id="statistics">
+                    <div>wind</div>
+                    <div>wind</div>
+                    <div>wind</div>
+                </div>
+            </div>
+
+        </div>
+    </main>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
     <script src="script.js"></script>
-</body>
 
+</body>
 </html>
+

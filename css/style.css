@@ -86,7 +86,7 @@ div#temperature {
 }
 
 div#sec-info {
-    border: 1px solid green;
+    border: 1px solid purple;
     padding-top: 8rem;
     color: rgba(255, 255, 255, 0.6);
 }

@@ -50,3 +50,11 @@ searchBtn.addEventListener("click", getWeather);
 
 loadCards();
 getWeather();
+
+document.addEventListener("keydown", function (event) {
+    if (event.key == "Escape") {
+        formulario.reset();
+    } else if (event.key == "Enter") {
+        getWeather();
+    }
+});

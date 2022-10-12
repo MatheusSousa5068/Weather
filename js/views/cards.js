@@ -1,9 +1,9 @@
-import { requestData } from '../utils/api.js';
+import { requestData } from "../utils/api.js";
 
 async function createCard(city) {
     const cityContainer = document.getElementById("cities-container");
 
-    const data = await requestData(city)
+    const data = await requestData(city);
 
     const cardView = `
         <div> 
@@ -14,7 +14,5 @@ async function createCard(city) {
 
     cityContainer.insertAdjacentHTML("beforeend", cardView);
 }
-
-
 
 export { createCard };

@@ -18,6 +18,6 @@ document.addEventListener("keydown", function (event) {
     }
 });
 
-// Chamadas de funções
+// Function calls
 loadCards();
 getWeather();

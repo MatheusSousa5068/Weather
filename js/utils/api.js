@@ -4,6 +4,6 @@ const requestData = async (city) => {
     const data = await response.json();
 
     return data;
-}
+};
 
 export { requestData };

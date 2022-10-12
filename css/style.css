@@ -41,6 +41,12 @@ input#search {
     
 }
 
+input#search:focus {
+    border: none;
+    background-color: #272727;
+    color: #fff;
+}
+
 button#search-btn {
     width: 2.5rem;
     height: 2rem;
@@ -66,8 +72,7 @@ div#main-info {
     justify-content: space-around;
     align-items: center;
     margin: auto;
-    font-weight: 200;
-    border: 1px solid red;
+    font-weight: 100;
 }
 
 div#city, div#temperature {
@@ -77,34 +82,18 @@ div#city, div#temperature {
 
 div#city {
     font-size: 4rem;
-    border: 1px solid pink;
 }
 
 div#temperature {
     font-size: 8rem;
-    border: 1px solid green;
 }
 
-div#sec-info {
-    border: 1px solid purple;
+div#sec-info {  
     padding-top: 8rem;
     color: rgba(255, 255, 255, 0.6);
 }
 
-div#local {
-    display: inline;
-}
-
-div#local i {
-    margin: 0 1rem 0 4rem;
-    font-size: 1.75rem;
-}
-
 div#statistics {
-    border: 1px solid red;
     display: flex;
     justify-content: space-around;
 }
-
-
-

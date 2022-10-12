@@ -67,6 +67,12 @@ div#main-section {
     background-color: #272727; 
 }
 
+div#last-updated {
+    padding: 0.3rem 0.7rem 0 0;
+    text-align: right;
+    color: rgba(255, 255, 255, 0.6);
+}
+
 div#main-info {
     display: flex;
     justify-content: space-around;
@@ -96,4 +102,12 @@ div#sec-info {
 div#statistics {
     display: flex;
     justify-content: space-around;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+    -webkit-text-fill-color: #fff;
 }

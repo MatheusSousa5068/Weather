@@ -7,8 +7,8 @@ async function createCard(city) {
 
     const cardView = `
         <div> 
-            ${data.location.name}
-            ${data.current.temp_c}
+            <p>${data.location.name}</p>
+            <p>${data.current.temp_c}</p>
         </div>
     `;
 

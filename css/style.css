@@ -139,3 +139,16 @@ input:-webkit-autofill:active {
     transition: background-color 5000s ease-in-out 0s;
     -webkit-text-fill-color: rgba(255, 255, 255, 0.6);
 }
+
+div#cities-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    /*margin: 5rem auto;*/
+}
+
+div#cities-container div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

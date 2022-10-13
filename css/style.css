@@ -1,19 +1,21 @@
 body {
     background-color: #121212;
     color: #fff;
-    font-family: 'Nunito', sans-serif;
+    font-family: "Nunito", sans-serif;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 div#title {
     text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
 }
 
 h1 {
     position: absolute;
     top: 3rem;
-    left: 43.5%;
-    font-family: 'Quicksand', sans-serif;
+    font-family: "Quicksand", sans-serif;
     font-size: 2.5rem;
     font-weight: 100;
 }
@@ -38,7 +40,6 @@ input#search {
     border: none;
     border-radius: 0.625rem;
     font-size: 0.875rem;
-    
 }
 
 input#search:focus {
@@ -50,13 +51,37 @@ input#search:focus {
 button#search-btn {
     width: 2.5rem;
     height: 2rem;
+    transition: all 0.001s;
+}
+
+button#refresh {
+    width: 2rem;
+    height: 1.3rem;
+    transition: 0.65s all;
+}
+
+button#search-btn,
+button#refresh {
     border: none;
     border-radius: 0.625rem;
     background-color: #272727;
     color: rgb(133, 133, 133);
-    font-family: 'Font Awesome 5 Free';
+    font-family: "Font Awesome 5 Free";
     font-weight: 700;
     cursor: pointer;
+}
+
+button#search-btn:hover,
+button#refresh:hover {
+    color: #fff;
+}
+
+button#refresh:hover{
+    transform: rotate(180deg);
+} 
+
+button#search-btn:active {
+    transform: translateY(0.125rem);
 }
 
 div#main-section {
@@ -64,12 +89,13 @@ div#main-section {
     height: 31.25rem;
     margin: 1.25rem auto;
     border-radius: 0.625rem;
-    background-color: #272727; 
+    background-color: #272727;
 }
 
-div#last-updated {
+div#last-updated-section {
+    display: flex;
+    justify-content: flex-end;
     padding: 0.3rem 0.7rem 0 0;
-    text-align: right;
     color: rgba(255, 255, 255, 0.6);
 }
 
@@ -81,20 +107,22 @@ div#main-info {
     font-weight: 100;
 }
 
-div#city, div#temperature {
+div#city,
+div#temperature {
     display: inline;
-    margin-top: 8rem;
+    margin-top: 7rem;
 }
 
 div#city {
     font-size: 4rem;
+    max-width: 30rem;
 }
 
 div#temperature {
     font-size: 8rem;
 }
 
-div#sec-info {  
+div#sec-info {
     padding-top: 8rem;
     color: rgba(255, 255, 255, 0.6);
 }
@@ -109,5 +137,5 @@ input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
     transition: background-color 5000s ease-in-out 0s;
-    -webkit-text-fill-color: #fff;
+    -webkit-text-fill-color: rgba(255, 255, 255, 0.6);
 }

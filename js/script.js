@@ -21,3 +21,12 @@ document.addEventListener("keydown", function (event) {
 // Function calls
 loadCards();
 getWeather();
+
+const refreshIcon = document.getElementById("refresh");
+refreshIcon.addEventListener("click", async () => {
+    getWeather()
+    refreshIcon.style.transform = 'translateY(0.15rem) rotate(180deg)'
+    await new Promise(r => setTimeout(r, 100));
+    refreshIcon.style.transform = 'translateY(0)'
+});
+

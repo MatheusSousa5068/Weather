@@ -1,9 +1,10 @@
 const requestData = async (city) => {
-    const url = `https://api.weatherapi.com/v1/current.json?key=ee51adc00b584f8fb65201705220310&q=${city}`;
+    const url = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${city}/today?unitGroup=metric&include=current&key=VKGDXVVU3QCQSGAN4K2KALKAC&contentType=json
+    `;
     const response = await fetch(url);
     const data = await response.json();
 
     return data;
 };
 
-export { requestData };
+export { requestData }

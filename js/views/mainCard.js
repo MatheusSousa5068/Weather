@@ -5,8 +5,9 @@ const getWeather = async () => {
     const city = document.querySelector("#search").value || "Joao Pessoa";
 
     const data = await requestData(city);
+    console.log(data)
 
-    if (data.current) {
+    if (data.address) {
         writeData(data);
     } else {
         error(city);
@@ -27,7 +28,9 @@ const writeData = (data) => {
 
     last_uptd.innerText = data.current.last_updated
 
-    temp.innerText = data.current.temp_c.toFixed() + "ºC";
+    console.log(data.days.temp)
+
+    temp.innerText = data.days[0].temp.toFixed() + "ºC";
     newCity.innerText = data.location.name.toUpperCase();
     if (newCity.innerText.length > 15 && newCity.innerText.length < 20) {
         newCity.style.fontSize = "3.5rem";

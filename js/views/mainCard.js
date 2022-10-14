@@ -23,7 +23,7 @@ const updateData = async () => {
 }
 
 const writeData = (data) => {
-    const last_uptd = document.querySelector("#last-updated");
+    const last_uptd = document.querySelector("#last-update-datetime");
     const temp = document.querySelector("#temperature");
     const newCity = document.querySelector("#city");
     const local = document.querySelector("#local");

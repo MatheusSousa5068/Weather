@@ -37,14 +37,20 @@
 
         <!-- inicio do modal -->
 
-        <button id="open-info-modal">Open Modal</button>
         <div class="modal" id="modal">
             <div class="modal-header">
-            <div class="title">Example Modal</div>
-            <button id="close-info-modal">&times;</button>
+                <button id="close-info-modal">&times;</button>
             </div>
             <div class="modal-body">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse quod alias ut illo doloremque eum ipsum obcaecati distinctio debitis reiciendis quae quia soluta totam doloribus quos nesciunt necessitatibus, consectetur quisquam accusamus ex, dolorum, dicta vel? Nostrum voluptatem totam, molestiae rem at ad autem dolor ex aperiam. Amet assumenda eos architecto, dolor placeat deserunt voluptatibus tenetur sint officiis perferendis atque! Voluptatem maxime eius eum dolorem dolor exercitationem quis iusto totam! Repudiandae nobis nesciunt sequi iure! Eligendi, eius libero. Ex, repellat sapiente!
+               <b>WEATHER ME</b> is a website created with the purpose of making it easier for you to search the weather conditions of cities all around the globe by presenting them on a clean and simple format.<br>
+               <div id="spaced-info">
+                    Just type the city of your choice in the input label above the main section and you'll have it. Quick and easy.<br>
+                    The <i class="fa-solid fa-location-dot"></i> icon refers to the region where the city is located.<br>
+                    The <i class="fa-solid fa-cloud"></i> icon refers to the cloud cover percentage.<br>
+                    The <i class="fa-solid fa-wind"></i> icon refers to the wind speed.<br>
+                    The <i class="fa-solid fa-droplet"></i> icon refers to the humidity percentage.<br>
+               </div>
+                You can always try to refresh the informations to receive their more recent status, as you can also check the local hour of their last update. 
             </div>
         </div>
         <div id="overlay"></div>
@@ -52,14 +58,22 @@
             <!-- fim do modal -->
 
         <div id="main-section">
-            <div id="last-updated-section">
-                <div id="last-updated"></div>
-                <button type="button" id="refresh"><i class="fa-solid fa-arrows-rotate"></i></button>
+            <div id="info-section">
+                <button id="open-info-modal">&#xf129;</button>
+                <div id="last-update">
+                    <div id="last-update-datetime"></div>
+                    <button type="button" id="refresh"><i class="fa-solid fa-arrows-rotate"></i></button>
+                </div>
             </div>
             <div id="main-info">
-                <div id="city">
+                <div id="city">JOÃO PESSOA
                 </div>
-                <div id="temperature">
+                <div id="temperature">25 ºC
+                </div>
+                <div id="change-temp-section">
+                    ºC
+                    <input type="checkbox" id="switch" /><label for="switch"></label>
+                    ºF
                 </div>
             </div>
             <div id="sec-info">

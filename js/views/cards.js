@@ -5,10 +5,12 @@ async function createCard(city) {
 
     const data = await requestData(city);
 
+    const location = data.resolvedAddress.split(',')
+
     const cardView = `
         <div> 
-            ${data.location.name}
-            ${data.current.temp_c}
+            ${location[0]}
+            ${data.days[0].temp.toFixed()}
         </div>
     `;
 

@@ -2,18 +2,25 @@ import { requestData } from "../utils/api.js";
 import { error } from "../utils/error.js";
 
 const getWeather = async () => {
-    const city = document.querySelector("#search").value || "Joao Pessoa";
+    const city = document.querySelector("#search").value || location[0] || "joao pessoa";
 
-    const data = await requestData(city);
-    console.log(data)
-
-    if (data.address) {
-        writeData(data);
-    } else {
-        error(city);
-    }
+    await requestData(city).then(result => {
+        writeData(result)
+    }).catch(err => {
+        error(city)
+    })
 };
 
+const updateData = async () => {
+    const city = document.querySelector("#city").innerText;
+    
+    await requestData(city).then(result => {
+        writeData(result)
+    
+    }).catch(err => {
+        error(city)
+    })
+}
 
 const writeData = (data) => {
     const last_uptd = document.querySelector("#last-updated");
@@ -26,29 +33,29 @@ const writeData = (data) => {
 
     console.log(data);
 
-    last_uptd.innerText = data.current.last_updated
+    last_uptd.innerHTML = data.days[0].datetime + `&nbsp;&nbsp;`+ data.currentConditions.datetime
 
-    console.log(data.days.temp)
+    const location = data.resolvedAddress.split(',')
 
     temp.innerText = data.days[0].temp.toFixed() + "ºC";
-    newCity.innerText = data.location.name.toUpperCase();
-    if (newCity.innerText.length > 15 && newCity.innerText.length < 20) {
+    newCity.innerText = location[0].toUpperCase();
+    if (newCity.innerText.length > 10 && newCity.innerText.length < 15) {
         newCity.style.fontSize = "3.5rem";
-    } else if (newCity.innerText.length >= 20) {
+    } else if (newCity.innerText.length >= 15) {
         newCity.style.fontSize = "2.75rem";
     } else {
         newCity.style.fontSize = "4rem";
     }
 
-    if (data.location.region !== "") {
-        local.innerHTML = `<i class="fa-solid fa-location-dot"></i> ${data.location.region}, ${data.location.country}`;
+    if (location[1] !== "") {
+        local.innerHTML = `<i class="fa-solid fa-location-dot"></i> ${location[1]}, ${location[2]}`;
     } else {
-        local.innerHTML = `<i class="fa-solid fa-location-dot"></i> ${data.location.country}`;
+        local.innerHTML = `<i class="fa-solid fa-location-dot"></i> ${location[2]}`;
     }
 
-    cloud.innerHTML = `<i class="fa-solid fa-cloud"></i> ${data.current.cloud}%`;
-    wind.innerHTML = `<i class="fa-solid fa-wind"></i> ${data.current.wind_mph}mph`;
-    humidity.innerHTML = `<i class="fa-solid fa-droplet"></i> ${data.current.humidity}%`;
+    cloud.innerHTML = `<i class="fa-solid fa-cloud"></i> ${data.days[0].cloudcover}%`;
+    wind.innerHTML = `<i class="fa-solid fa-wind"></i> ${data.days[0].windspeed}km/h`;
+    humidity.innerHTML = `<i class="fa-solid fa-droplet"></i> ${data.days[0].humidity}%`;
 };
 
-export { getWeather };
+export { getWeather, updateData };

@@ -1,7 +1,7 @@
 import { cities } from "./utils/cities.js";
 
 import { createCard } from "./views/cards.js";
-import { getWeather } from "./views/mainCard.js";
+import { getWeather, updateData } from "./views/mainCard.js";
 
 const searchBtn = document.getElementById("search-btn");
 
@@ -23,10 +23,8 @@ loadCards();
 getWeather();
 
 const refreshIcon = document.getElementById("refresh");
+
 refreshIcon.addEventListener("click", async () => {
-    getWeather()
-    refreshIcon.style.transform = 'translateY(0.15rem) rotate(180deg)'
-    await new Promise(r => setTimeout(r, 100));
-    refreshIcon.style.transform = 'translateY(0)'
+    updateData()
 });
 

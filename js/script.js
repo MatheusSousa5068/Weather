@@ -1,8 +1,9 @@
 import { cities } from "./utils/cities.js";
 
-import { createCard } from "./views/cards.js";
+import { createCard} from "./views/cards.js";
 import { getWeather, updateData } from "./views/mainCard.js";
 import { openModal, closeModal } from "./views/modal.js";
+
 
 const searchBtn = document.getElementById("search-btn");
 
@@ -12,11 +13,16 @@ const closeModalButton = document.querySelector('#close-info-modal')
 const refreshIcon = document.getElementById("refresh");
 
 async function loadCards() {
-    cities.map(createCard);
+    // cities.map(createCard);
+    for (var i = 0; i < 4; i++){
+        createCard(cities[i],i)
+        
+    }
 }
 
 // Listeners
 searchBtn.addEventListener("click", getWeather);
+
 
 document.addEventListener("keydown", function (event) {
     if (event.key == "Enter") {
@@ -41,5 +47,13 @@ refreshIcon.addEventListener("click", async () => {
 // Function calls
 loadCards();
 getWeather();
+
+
+const closeBtn0 = document.getElementById("close-btn0");
+console.log(closeBtn0)
+closeBtn0.addEventListener("click",deleteCard(0));
+
+
+teste()
 
 

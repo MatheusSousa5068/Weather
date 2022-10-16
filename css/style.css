@@ -54,14 +54,14 @@ button#search-btn {
     transition: all 0.001s;
 }
 
-button#refresh, button#open-info-modal, button#close-info-modal {
+button#refresh, button#open-info-modal, button#close-info-modal,  #close-btn0, #close-btn1, #close-btn2, #close-btn3{
     width: 2rem;
     height: 1.3rem;
     transition: 0.65s all;
 }
 
 button#search-btn,
-button#refresh, button#open-info-modal, button#close-info-modal {
+button#refresh, button#open-info-modal, button#close-info-modal, #close-btn0, #close-btn1, #close-btn2, #close-btn3 {
     border: none;
     border-radius: 0.625rem;
     background-color: #272727;
@@ -258,3 +258,39 @@ input[type=checkbox]{
     padding-top: 7rem;
     font-size: 0.5rem;
   }
+
+div#favcities-section {
+    width: 65.75rem;
+    height: 10rem;
+    margin: 1.25rem auto;
+    
+}
+
+div#cities-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    
+}
+
+.favcity-card {
+    width: 14rem;
+    height: 8.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #272727;
+    border-radius: 0.625rem;
+    
+}
+
+
+
+.favcity-card span{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    padding-bottom: 2rem;
+}

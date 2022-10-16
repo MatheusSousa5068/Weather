@@ -3,12 +3,12 @@ import { requestData } from "../utils/api.js";
 async function createCard(city, index) {
     const cityContainer = document.getElementById("cities-container");
 
-    const data = await requestData(city);
+    const data = await requestData(city, index);
 
     const location = data.resolvedAddress.split(',')
     
     const cardView = `
-        <div class="favcity-card">
+        <div class="favcity-card${index}">
             <button type="button" id="close-btn${index}">&#xf00d;</button>
             <span>
                 <p>${location[0]}</p> 
@@ -24,13 +24,17 @@ async function createCard(city, index) {
     
 
     cityContainer.insertAdjacentHTML("beforeend", cardView);
-    const closeBtn1 = document.getElementById("close-btn0");
-    console.log(closeBtn1)
+    const closeBtn = document.getElementById(`close-btn${index}`);
+    console.log(closeBtn)
+    closeBtn.addEventListener("click",() => {
+        deleteCard(index)
+    });
+    
 }
 
-function deleteCard(index){
-    let cityCard = document.querySelector("#cities-container div");
-    [...cityCard][index].innerHTML = `<button type="button" id="add-btn">&#xf067;</button>`;
+async function deleteCard(index){
+    let cityCard = document.querySelector(`.favcity-card${index}`);
+    cityCard.innerHTML = `<button type="button" id="add-btn${index}">&#xf067;</button>`;
     
 }
 

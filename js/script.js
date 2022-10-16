@@ -49,11 +49,11 @@ loadCards();
 getWeather();
 
 
-const closeBtn0 = document.getElementById("close-btn0");
-console.log(closeBtn0)
-closeBtn0.addEventListener("click",deleteCard(0));
 
 
-teste()
+
+// const closeBtn0 = document.getElementById("close-btn0");
+// console.log(closeBtn0)
+// closeBtn0.addEventListener("click",deleteCard(0));
 
 

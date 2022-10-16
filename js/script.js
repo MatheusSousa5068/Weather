@@ -13,11 +13,13 @@ const closeModalButton = document.querySelector('#close-info-modal')
 const refreshIcon = document.getElementById("refresh");
 
 async function loadCards() {
-    // cities.map(createCard);
-    for (var i = 0; i < 4; i++){
-        createCard(cities[i],i)
+    cities.map((city, index) => {
+        createCard(city,index)
+    });
+    // for (var i = 0; i < 4; i++){
+    //     createCard(cities[i],i)
         
-    }
+    // }
 }
 
 // Listeners

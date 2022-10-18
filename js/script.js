@@ -3,6 +3,7 @@ import { cities } from "./utils/cities.js";
 import { createCard} from "./views/cards.js";
 import { getWeather, updateData } from "./views/mainCard.js";
 import { openModal, closeModal } from "./views/modal.js";
+import { changeTemp } from "./utils/changeTemp.js";
 
 
 const searchBtn = document.getElementById("search-btn");
@@ -11,6 +12,8 @@ const openModalButton = document.querySelector('#open-info-modal');
 const closeModalButton = document.querySelector('#close-info-modal')
 
 const refreshIcon = document.getElementById("refresh");
+
+const switchTempButton = document.querySelector('#switch');
 
 async function loadCards() {
     cities.map((city, index) => {
@@ -45,6 +48,14 @@ closeModalButton.addEventListener('click', () => {
 refreshIcon.addEventListener("click", async () => {
     updateData()
 });
+
+switchTempButton.addEventListener("click", () => {
+    if (switchTempButton.checked) {
+        changeTemp()
+    } else {
+        getWeather()
+    }
+})
 
 // Function calls
 loadCards();

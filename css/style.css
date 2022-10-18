@@ -239,7 +239,7 @@ input[type=checkbox]{
   }
   
   input:checked + label {
-    background: red;
+    background: #121212;
   }
   
   input:checked + label:after {

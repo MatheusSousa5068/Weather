@@ -1,5 +1,19 @@
 import { cities } from "./utils/cities.js";
 
+/*
+esse código serve pra pegar inserir o array no local storage caso ele n exista
+caso exista, n faz nada
+
+import { salve } from './teste.js'
+
+if (localStorage.getItem('teste')) {
+    // pass
+}
+else {
+    localStorage.setItem('teste', salve);
+}
+*/
+
 import { createCard} from "./views/cards.js";
 import { getWeather, updateData } from "./views/mainCard.js";
 import { openModal, closeModal } from "./views/modal.js";

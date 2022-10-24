@@ -275,7 +275,7 @@ div#cities-container{
     
 }
 
-.favcity-card {
+.favcity-card0,.favcity-card1,.favcity-card2,.favcity-card3 {
     width: 14rem;
     height: 8.5rem;
     display: flex;
@@ -286,11 +286,15 @@ div#cities-container{
     
 }
 
+.close-btn-container{
+    display: flex;
+    justify-content: flex-end;
+}
 
-
-.favcity-card span{
+.favcity-card0 span,.favcity-card1 span,.favcity-card2 span,.favcity-card3 span{
     display: flex;
     justify-content: space-around;
     flex-direction: row;
     padding-bottom: 2rem;
+    
 }

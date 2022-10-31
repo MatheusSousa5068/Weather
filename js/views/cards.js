@@ -9,14 +9,15 @@ async function createCard(city, index) {
 
     const location = data.resolvedAddress.split(',')
     
+    // &#xf00d; (codigo do "x")
     const cardView = `
         <div class="favcity-card${index}">
             <div class='close-btn-container'>
-                <button type="button" id="close-btn${index}">&#xf00d;</button>
+                <button type="button" id="close-btn${index}"></button>
             </div>
             <span>
                 <p>${location[0]}</p> 
-                <p>${data.days[0].temp.toFixed()}</p>
+                <p>${data.days[0].temp.toFixed()}ºC</p>
             </span>
         </div>
     `;
@@ -41,8 +42,7 @@ async function createCard(city, index) {
 
 async function deleteCard(index){
     const cityCard = document.querySelector(`.favcity-card${index}`);
-    cityCard.innerHTML = `<button type="button" id="add-btn${index}" onclick="handleConfirmationRequest(${index});">&#xf067;</button>`;
-    
+    cityCard.innerHTML = `<button type="button" id="add-btn${index}" onclick="handleConfirmationRequest(${index});">&#xf067;</button>`; 
 }
 
 

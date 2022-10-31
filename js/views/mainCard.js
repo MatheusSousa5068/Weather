@@ -47,10 +47,10 @@ const writeData = (data) => {
         newCity.style.fontSize = "4rem";
     }
 
-    if (location[1] !== "") {
+    if (location[2] != undefined) {
         local.innerHTML = `<i class="fa-solid fa-location-dot"></i> ${location[1]}, ${location[2]}`;
     } else {
-        local.innerHTML = `<i class="fa-solid fa-location-dot"></i> ${location[2]}`;
+        local.innerHTML = `<i class="fa-solid fa-location-dot"></i> ${location[1]}`;
     }
 
     cloud.innerHTML = `<i class="fa-solid fa-cloud"></i> ${data.days[0].cloudcover}%`;

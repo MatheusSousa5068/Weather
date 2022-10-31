@@ -303,3 +303,9 @@ span {
     font-size: 21px;
     font-weight: 700;
 }
+
+div#copyright {
+    margin-top: 12.5%;
+    color: rgba(255, 255, 255, 0.6);
+    text-align: center;
+}

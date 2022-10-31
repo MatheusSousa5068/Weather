@@ -12,9 +12,6 @@ async function createCard(city, index) {
     // &#xf00d; (codigo do "x")
     const cardView = `
         <div class="favcity-card${index}">
-            <div class='close-btn-container'>
-                <button type="button" id="close-btn${index}"></button>
-            </div>
             <span>
                 <p>${location[0]}</p> 
                 <p>${data.days[0].temp.toFixed()}ºC</p>
